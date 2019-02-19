@@ -1,0 +1,83 @@
+{
+  "title": "Correct expected cost tender106",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Correctness of the estimated value",
+          "title_ru": "Справедливость определения ожидаемой стоимости",
+          "title_uk": "Правильність визначення очікуваної вартості",
+          "type": "title"
+        },
+        {
+          "inline": true,
+          "key": "correctExpectedCost",
+          "title": "Was the estimated value of the tender set correctky? Is the price adequate in relation to the market?",
+          "titleMap": {
+            "no": "No",
+            "yes": "Yes"
+          },
+          "titleMap_ru": {
+            "no": "Нет",
+            "yes": "Да"
+          },
+          "titleMap_uk": {
+            "no": "Ні",
+            "yes": "Так"
+          },
+          "title_ru": "Правильно ли заказчик определил ожидаемую стоимость? Насколько такая стоимость отвечает рыночной?",
+          "title_uk": "Чи правильно замовник визначив очікувану вартість? Наскільки така вартість відповідає ринковим цінам?",
+          "type": "radios"
+        },
+        {
+          "helpvalue": "Please notice, that in the tender with a reverse aution it is the most correct oprion for a procuring entity to set a value which equals or slightly exceeds the market price",
+          "helpvalue_ru": "Обратите, пожалуйста, внимание на то, что в тендерах с использованием понижающего аукциона заказчикам целесообразно ставить ожидаемую стоимость, которая равняется или немного превышает рыночную. В таком случае, благодаря аукциону, заказчик получает оптимальную цену.",
+          "helpvalue_uk": "Будь ласка, зауважте, що в тендерах із застосуванням понижуючого аукціону замовникам доцільно ставити очікувану вартість, яка дорівнює або трохи перевищує ринкову. В такому випадку, завдяки аукціону, замовник отримає оптимальну ціну",
+          "type": "help"
+        },
+        {
+          "key": "correctExpectedCostComment",
+          "title": "Your commentary",
+          "title_ru": "Ваш комментарий",
+          "title_uk": "Ваш коментар",
+          "type": "textarea"
+        }
+      ],
+      "properties": {
+        "correctExpectedCost": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "correctExpectedCostComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "correctExpectedCost"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

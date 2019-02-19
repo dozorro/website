@@ -1,0 +1,229 @@
+{
+  "title": "Procurement subject tender102",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "anyOf": [
+        { "required": ["bestPrice"] },
+        { "required": ["maxCompetition"] },
+        { "required": ["productQuality"] },
+        { "required": ["qualitativeCriteria"] }
+      ],
+      "form": [
+        {
+          "title": "How clear/qualified was the specification of a procurement scope",
+          "title_ru": "Четкость/доходчивость требований к предмету закупки",
+          "title_uk": "Чіткість/зрозумілість вимог до предмету закупівлі",
+          "type": "title"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "bestPrice",
+              "title": "Were the requirements clear enough to get the most economically advantageous good/service?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Позволяют ли требования к предмету закупки купить качественный товар по оптимальной стоимости?",
+              "title_uk": "Чи дозволяють вимоги до предмету закупівлі придбати якісний товар за оптимальну ціну?",
+              "type": "radios"
+            },
+            {
+              "key": "bestPriceComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "title": "Description of the requirements",
+          "title_ru": "Описание требований",
+          "title_uk": "Опис вимог",
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "maxCompetition",
+              "title": "Were the requirements set the way to guarantee maximum competition between the participants?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Способны ли такие требования обеспечить максимальную конкуренчию среди участников?",
+              "title_uk": "Чи здатні такі вимоги забезпечити максимальну конкуренцію серед учасників?",
+              "type": "radios"
+            },
+            {
+              "key": "maxCompetitionComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "title": "Competition",
+          "title_ru": "Конкуренция",
+          "title_uk": "Конкуренція",
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "productQuality",
+              "title": "Is the need quality clear for the potential participant?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Можно ли понять потенциальному участнику, товар какого качества ожидает купить заказчик?",
+              "title_uk": "Чи зрозуміло потенційному постачальнику товар якої якості очікує придбати замовник?",
+              "type": "radios"
+            },
+            {
+              "key": "productQualityComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "title": "Quality of the goods/services",
+          "title_ru": "Качество товаров/услуг",
+          "title_uk": "Якість продукту",
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "qualitativeCriteria",
+              "title": "Were the quality (MEAT) criteria set in the tender?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Предусмотрена ли процедура оценки качественных критериев предмета закупки на этапе квалификации/заключения договора/исполнения договора?",
+              "title_uk": "Чи передбачена процедура оцінки якісних критеріїв предмету закупівлі на етапі кваліфікації/укладання договору/виконання договору?",
+              "type": "radios"
+            },
+            {
+              "key": "qualitativeCriteriaComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "title": "Evaluation of the criteria",
+          "title_ru": "Оценка критериев",
+          "title_uk": "Оцінка критеріїв",
+          "type": "fieldset"
+        }
+      ],
+      "properties": {
+        "bestPrice": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "bestPriceComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "maxCompetition": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "maxCompetitionComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "productQuality": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "productQualityComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "qualitativeCriteria": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "qualitativeCriteriaComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

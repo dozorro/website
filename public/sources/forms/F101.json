@@ -1,0 +1,74 @@
+{
+  "title": "General form tender101",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Overall estimation of the procurement",
+          "title_ru": "Оценка условий закупки",
+          "title_uk": "Оцінка умов закупівлі",
+          "type": "title"
+        },
+        {
+          "helpvalue": "Please, give your estimation for the procurement scope. Such estimation can include overall quality of the tender documentation, quality of how the procurement scope was specified, qualification criteria for the participants, estimated value, etc.",
+          "helpvalue_ru": "Поставьте, пожалуйста, оценку условиям закупки. Такая оценка должна включать общую оценку тендерной документации, качество и отсутствие предубеждений в требованиях к предмету закупки и в квалификационных требованиях к участникам, справедливость определения ожидаемой стоимости, итд.",
+          "helpvalue_uk": "Будь ласка, поставте оцінку умовам закупівлі. Така оцінка має включати в себе загальну оцінку тендерної документації, якість і неупередженість вимог до предмету закупівлі та кваліфікаційних вимог до учасників, справедливість визначення очікуваної вартості, тощо.",
+          "type": "help"
+        },
+        {
+          "inline": true,
+          "key": "overallScore",
+          "title": "Overall estimation",
+          "title_ru": "Общая оценка",
+          "title_uk": "Загальна оцінка",
+          "type": "radios"
+        },
+        {
+          "key": "overallScoreComment",
+          "title": "Your commentary",
+          "title_ru": "Ваш комментарий",
+          "title_uk": "Ваш коментар",
+          "type": "textarea"
+        }
+      ],
+      "properties": {
+        "overallScoreComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "overallScore": {
+          "enum": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "overallScore"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

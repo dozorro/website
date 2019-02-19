@@ -1,0 +1,77 @@
+{
+  "title": "Bank guarantee expediency tender108",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Correctness of the bank guarantee usage",
+          "title_ru": "Целесообразность использования банковской гарантии",
+          "title_uk": "Доцільність використання банківської гарантії",
+          "type": "title"
+        },
+        {
+          "inline": true,
+          "key": "bankGuaranteeExpediency",
+          "title": "Is the demand of a guarantee useful and applicable in this tender?",
+          "titleMap": {
+            "no": "No",
+            "yes": "Yes"
+          },
+          "titleMap_ru": {
+            "no": "Нет",
+            "yes": "Да"
+          },
+          "titleMap_uk": {
+            "no": "Ні",
+            "yes": "Так"
+          },
+          "title_ru": "Целесообразно ли, на ваш взгляд, использование банковской гарантии в этой закупке?",
+          "title_uk": "Чи доцільне, на ваш погляд, використання банківської гарантії в цій закупівлі?",
+          "type": "radios"
+        },
+        {
+          "key": "bankGuaranteeExpediencyComment",
+          "title": "Your commentary",
+          "title_ru": "Ваш комментарий",
+          "title_uk": "Ваш коментар",
+          "type": "textarea"
+        }
+      ],
+      "properties": {
+        "bankGuaranteeExpediency": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "bankGuaranteeExpediencyComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "bankGuaranteeExpediency"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

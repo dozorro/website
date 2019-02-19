@@ -1,0 +1,77 @@
+{
+  "title": "Lots expediency tender107",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Correctness of the lots usage",
+          "title_ru": "Целесообразность использования лотов",
+          "title_uk": "Доцільність використання лотів",
+          "type": "title"
+        },
+        {
+          "inline": true,
+          "key": "lotsExpediency",
+          "title": "Is the spliting into lots correct and useful in this tender?",
+          "titleMap": {
+            "no": "No",
+            "yes": "Yes"
+          },
+          "titleMap_ru": {
+            "no": "Нет",
+            "yes": "Да"
+          },
+          "titleMap_uk": {
+            "no": "Ні",
+            "yes": "Так"
+          },
+          "title_ru": "Целесообразно ли, на ваш взгляд, разделение предмета закупки на лоты в этой закупке?",
+          "title_uk": "Чи доцільне, на ваш погляд, розділення предмету закупівлі на лоти в цій закупівлі?",
+          "type": "radios"
+        },
+        {
+          "key": "lotsExpediencyComment",
+          "title": "Your commentary",
+          "title_ru": "Ваш комментарий",
+          "title_uk": "Ваш коментар",
+          "type": "textarea"
+        }
+      ],
+      "properties": {
+        "lotsExpediency": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "lotsExpediencyComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "lotsExpediency"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,77 @@
+{
+  "title": "Correct classifiers codes tender105",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Correctness of the CPV classisifaction",
+          "title_ru": "Правильность использования кодов/классификаторов",
+          "title_uk": "Правильність застосування кодів класифікаторів",
+          "type": "title"
+        },
+        {
+          "inline": true,
+          "key": "correctClassifiersCodes",
+          "title": "Is the classification set properly, accordignly to the scope of procurement?",
+          "titleMap": {
+            "no": "No",
+            "yes": "Yes"
+          },
+          "titleMap_ru": {
+            "no": "Нет",
+            "yes": "Да"
+          },
+          "titleMap_uk": {
+            "no": "Ні",
+            "yes": "Так"
+          },
+          "title_ru": "Правильно ли заказчик определил код товара/товаров, которые являются предметом закупки?",
+          "title_uk": "Чи правильно замовник визначив код товару/товарів, що закуповуються?",
+          "type": "radios"
+        },
+        {
+          "key": "correctClassifiersCodesComment",
+          "title": "Your commentary",
+          "title_ru": "Ваш комментарий",
+          "title_uk": "Ваш коментар",
+          "type": "textarea"
+        }
+      ],
+      "properties": {
+        "correctClassifiersCodes": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "correctClassifiersCodesComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "correctClassifiersCodes"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,14 @@
+/vendor
+/node_modules
+/public/build
+.DS_Store
+.env
+*.env
+.idea
+/resources/vendor
+/resources/assets/js/vendor
+/resources/assets/less/vendor
+/resources/assets/css/vendor
+/public/pz-wp
+/public/assets/css*
+/public/assets/js/app.js*

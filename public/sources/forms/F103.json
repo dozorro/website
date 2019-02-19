@@ -1,0 +1,83 @@
+{
+  "title": "Impartial product requirements tender103",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Undiscriminating conditions of the tender",
+          "title_ru": "Отсутствие предубежденности/дискриминационных условий в требованиях закупки",
+          "title_uk": "Неупередженість/недискримінаційність вимог закупівлі",
+          "type": "title"
+        },
+        {
+          "inline": true,
+          "key": "impartialProductRequirements",
+          "title": "Are the conditions of the tender undiscriminating and set in such a way so not to benefit particular participants?",
+          "titleMap": {
+            "no": "No",
+            "yes": "Yes"
+          },
+          "titleMap_ru": {
+            "no": "Нет",
+            "yes": "Да"
+          },
+          "titleMap_uk": {
+            "no": "Ні",
+            "yes": "Так"
+          },
+          "title_ru": "Являются ли требования к предмету закупки непредубежденными и таковыми, что не создают преимущества отдельным участникам?",
+          "title_uk": "Чи є вимоги до предмету закупівлі неупередженими і такими, що не створюють переваги окремим учасникам?",
+          "type": "radios"
+        },
+        {
+          "key": "impartialProductRequirementsComment",
+          "title": "Your commentary",
+          "title_ru": "Ваш комментарий",
+          "title_uk": "Ваш коментар",
+          "type": "textarea"
+        },
+        {
+          "helpvalue": "If you consider the conditions to be discriminating, than please specify what they consist of and who is the beneficiary",
+          "helpvalue_ru": "Если вы считаете условия предубежденными, объясните, пожалуйста, в чем именно состоит дискриминация, и в чью пользу она работает",
+          "helpvalue_uk": "Якщо ви вважаєте умови упередженими, будь ласка, поясніть в чому саме полягає дискримінація та на чию користь вона працює",
+          "type": "help"
+        }
+      ],
+      "properties": {
+        "impartialProductRequirements": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "impartialProductRequirementsComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "impartialProductRequirements"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

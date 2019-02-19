@@ -1,0 +1,137 @@
+{
+  "title": "Purchaser contract execution tender112",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Evaluation of how was the contract executed by the procuring entity",
+          "title_ru": "Оценка исполнения заказчиком условий договора о закупке ( для поставщика)",
+          "title_uk": "Оцінка виконання замовником умов договору про закупівлю (для постачальника)",
+          "type": "title"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "purchaserDutiesExecution",
+              "title": "Evaluate the perfomance of it’s duties by the procuring entity",
+              "title_ru": "Оцените качество исполнения заказчиком своих обязательств",
+              "title_uk": "Оцініть якість виконання замовником своїх обов’язків",
+              "type": "radios"
+            },
+            {
+              "key": "purchaserDutiesExecutionComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "key": "purchaserInteractionProblems",
+              "title": "Which problems occurred during the cooperation with the procuring entity",
+              "titleMap": {
+                "dontSigning": "Refusal to sign the documents",
+                "goodsReceipt": "Creating difficulties while receiving the goods",
+                "latePayment": "Delays with payment",
+                "other": "Other",
+                "priceChange": "Change of the price",
+                "termsFailure": "Messing the deadlines"
+              },
+              "titleMap_ru": {
+                "dontSigning": "Неподписание документов",
+                "goodsReceipt": "Создание препятствий при приемке товара",
+                "latePayment": "Несвоевременная оплата",
+                "other": "Другое",
+                "priceChange": "Изменение цены",
+                "termsFailure": "Несоблюдение сроков"
+              },
+              "titleMap_uk": {
+                "dontSigning": "Непідписання документів",
+                "goodsReceipt": "Створення перешкод при прийомці товару",
+                "latePayment": "Несвоєчасна оплата",
+                "other": "Інше",
+                "priceChange": "Зміна ціни",
+                "termsFailure": "Недотримання строків"
+              },
+              "title_ru": "Какие проблемы возникли при взаимодействии с заказчиком (выберите один или несколько вариантов)",
+              "title_uk": "Які саме проблеми виникли у взаємодії із замовником (оберіть один або декілька варіантів):",
+              "type": "checkboxes"
+            },
+            {
+              "key": "purchaserInteractionProblemsComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "type": "fieldset"
+        }
+      ],
+      "properties": {
+        "purchaserDutiesExecution": {
+          "enum": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"
+          ],
+          "type": "string"
+        },
+        "purchaserDutiesExecutionComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "purchaserInteractionProblems": {
+          "items": {
+            "enum": [
+              "termsFailure",
+              "latePayment",
+              "goodsReceipt",
+              "priceChange",
+              "dontSigning",
+              "other"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
+        },
+        "purchaserInteractionProblemsComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "purchaserDutiesExecution"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

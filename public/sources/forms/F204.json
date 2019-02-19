@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "title": "Archive reason F204",
+  "properties": {
+    "author": {
+      "type": "object",
+      "description": "Form submitter.",
+      "properties": {
+        "authBy": {
+          "description": "Used authentication service (internal, social.facebook)",
+          "pattern": "^[0-9A-Za-z_\\.-]{2,40}$",
+          "type": "string"
+        },
+        "name": {
+          "description": "Author display name.",
+          "minLength": 2,
+          "maxLength": 80,
+          "type": "string"
+        },
+        "token": {
+          "description": "User token used by owner.",
+          "minLength": 1,
+          "maxLength": 200,
+          "type": "string"
+        }
+      },
+      "required": [
+        "authBy",
+        "name"
+      ]
+    },
+    "parentForm": {
+      "description": "Raw id of tender (32 char, hex)",
+      "pattern": "^[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "tender": {
+      "description": "Raw id of tender (32 char, hex)",
+      "pattern": "^[0-9a-f]{32}$",
+      "type": "string"
+    },
+    "formData": {
+      "type": "object",
+      "title": "Архівування",
+      "properties": {
+        "reason": {
+          "type": "string",
+          "enum": ["succes", "defeat", "cancel"]
+        },
+        "reasonComment": {
+          "minLength": 1,
+          "maxLength": 10000,
+          "type": "string"
+        },
+        "is_anon": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "reason"
+      ],
+      "form": [
+        {
+          "key": "reason",
+          "title": "Причина",
+          "type": "radios",
+          "inline": true,
+          "titleMap": {
+            "succes": "Перемога",
+            "defeat": "Поразка",
+            "cancel": "Відміна (здатись)"
+          }
+        },
+        {
+          "key": "reasonComment",
+          "title": "Ваш коментар",
+          "type": "textarea"
+        },
+        {
+          "key": "is_anon",
+          "inlinetitle": " - анонімно?"
+        }
+      ]
+    }
+  },
+  "required": [
+    "reasonComment",
+    "reason"
+  ]
+}

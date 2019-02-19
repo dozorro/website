@@ -1,0 +1,126 @@
+{
+  "title": "Fairness of the qualification tender111",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Evaluation of the qualification process",
+          "title_ru": "Оценка качества и справедливости процесса квалификации",
+          "title_uk": "Оцінка якості та справедливості процесу кваліфікації",
+          "type": "title"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "cheapestWasDisqualified",
+              "title": "Was the lowest proposal after the reverse auction disqualified?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Была ли дисквалифицирована заказчиком самая низкая цена по результатам аукциона (одна или несколько)?",
+              "title_uk": "Чи було дискваліфіковано замовником найнижчу цінову пропозицію за підсумками аукціону (одну або декілька)?",
+              "type": "radios"
+            },
+            {
+              "key": "cheapestWasDisqualifiedComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "argumentativeDisqualification",
+              "title": "Was the reason for disqualification clear and reasoned enough?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Была ли предоставленная аргументация дисквалификации достаточной и обоснованной?",
+              "title_uk": "Чи була наведена аргументація для дискваліфікації достатньою та обґрунтованою?",
+              "type": "radios"
+            },
+            {
+              "key": "argumentativeDisqualificationComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "type": "fieldset"
+        }
+      ],
+      "properties": {
+        "argumentativeDisqualification": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "argumentativeDisqualificationComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "cheapestWasDisqualified": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "cheapestWasDisqualifiedComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "cheapestWasDisqualified"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

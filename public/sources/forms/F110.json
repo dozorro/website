@@ -1,0 +1,234 @@
+{
+  "title": "Interaction evaluation tender110",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "anyOf": [
+        { "required": ["answeredInTime"] },
+        { "required": ["communicationMethod"] },
+        { "required": ["procuringQuestions"] },
+        { "required": ["supplierQuestions"] }
+      ],
+      "form": [
+        {
+          "title": "Evaluating communication of the procuring entity with the participants",
+          "title_ru": "Оценка взаимодействия заказчика с участниками",
+          "title_uk": "Оцінка взаємодії замовника із учасниками",
+          "type": "title"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "supplierQuestions",
+              "title": "Did you submit a question to the procuring entity?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Пришлось ли вам задавать заказчику дополнительные вопросы по условиям закупки?",
+              "title_uk": "Чи довелось вам ставити замовнику додаткові питання стосовно умов закупівлі?",
+              "type": "radios"
+            },
+            {
+              "key": "supplierQuestionsComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "procuringQuestions",
+              "title": "Did a procuring entity ask you any questions?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Задавал ли заказчик вам какие-либо вопросы?",
+              "title_uk": "Чи ставив замовник вам будь-які питання?",
+              "type": "radios"
+            },
+            {
+              "key": "procuringQuestionsComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            },
+            {
+              "helpvalue": "If the answer is “yes”, please, specify the period when the communication took place (before the bids opening, during qualification, etc)",
+              "helpvalue_ru": "Если ваш ответ “Да”, укажите, пожалуйста, на каком этапе закупки состоялось ваше общение с заказчиком ( до объявления закупки, после раскрытия пропозиций, на этапе квалификации, итд)",
+              "helpvalue_uk": "Якщо ваша відповідь “Так”, будь ласка, вкажіть в який період закупівлі відбувалось ваше спілкування з замовником (до оголошення закупівлі, після розкриття пропозицій, на етапі кваліфікації тощо)",
+              "type": "help"
+            }
+          ],
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "inline": true,
+              "key": "answeredInTime",
+              "title": "Have you received an answer from the procuring entity during the enquiry period?",
+              "titleMap": {
+                "no": "No",
+                "yes": "Yes"
+              },
+              "titleMap_ru": {
+                "no": "Нет",
+                "yes": "Да"
+              },
+              "titleMap_uk": {
+                "no": "Ні",
+                "yes": "Так"
+              },
+              "title_ru": "Получили ли вы ответ от заказчика в установленные сроки?",
+              "title_uk": "Чи отримали ви відповідь від замовника в установлені терміни?",
+              "type": "radios"
+            },
+            {
+              "key": "answeredInTimeComment",
+              "title": "Your commentary",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "type": "fieldset"
+        },
+        {
+          "items": [
+            {
+              "key": "communicationMethod",
+              "title": "What was the channel of communication?",
+              "titleMap": {
+                "email": "Via e-mail",
+                "mobile": "Via cell-phone",
+                "personal": "In person",
+                "phone": "Via phone",
+                "webpage": "On the ePlatform"
+              },
+              "titleMap_ru": {
+                "email": "С помощью электронной почты",
+                "mobile": "Средствами мобильной связи",
+                "personal": "Личная встреча",
+                "phone": "По рабочему номеру телефона",
+                "webpage": "На странице закупки в системе ProZorro"
+              },
+              "titleMap_uk": {
+                "email": "Електронною поштою",
+                "mobile": "Мобільним зв’язком",
+                "personal": "Особиста зустріч",
+                "phone": "Робочим телефоном",
+                "webpage": "На сторінці закупівлі в системі ProZorro"
+              },
+              "title_ru": "С помощью какого способа состоялось ваше общение с заказчиком?",
+              "title_uk": "Яким способом відбувалось ваше спілкування із замовником?",
+              "type": "radios"
+            },
+            {
+              "key": "answeredInTimeComment",
+              "title": "Your comment",
+              "title_ru": "Ваш комментарий",
+              "title_uk": "Ваш коментар",
+              "type": "textarea"
+            }
+          ],
+          "type": "fieldset"
+        }
+      ],
+      "properties": {
+        "answeredInTime": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "answeredInTimeComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "communicationMethod": {
+          "enum": [
+            "webpage",
+            "email",
+            "phone",
+            "mobile",
+            "personal"
+          ],
+          "type": "string"
+        },
+        "communicationMethodComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "procuringQuestions": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "procuringQuestionsComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "supplierQuestions": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "supplierQuestionsComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}

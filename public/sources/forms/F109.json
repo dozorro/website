@@ -1,0 +1,77 @@
+{
+  "title": "Cancellation legitimacy tender109",
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "$ref": "#/definitions/author",
+      "description": "author schema described in comment model"
+    },
+    "formData": {
+      "additionalProperties": false,
+      "form": [
+        {
+          "title": "Justification of the cancellation of tender",
+          "title_ru": "Правомерность отмены закупки",
+          "title_uk": "Правомірність відміни закупівлі",
+          "type": "title"
+        },
+        {
+          "inline": true,
+          "key": "cancellationLegitimacy",
+          "title": "Was the tender justifyingly cancelled? Was the reson specified clearly?",
+          "titleMap": {
+            "no": "No",
+            "yes": "Yes"
+          },
+          "titleMap_ru": {
+            "no": "Нет",
+            "yes": "Да"
+          },
+          "titleMap_uk": {
+            "no": "Ні",
+            "yes": "Так"
+          },
+          "title_ru": "Была ли отмена закупки правомерна? Была ли предоставленная аргументация отмены закупки достаточно обоснованной?",
+          "title_uk": "Чи правомірною була відміна закупівлі? Чи була наведена аргументація відміни закупівлі достатньо обґрунтованою?",
+          "type": "radios"
+        },
+        {
+          "key": "cancellationLegitimacyComment",
+          "title": "Your commentary",
+          "title_ru": "Ваш комментарий",
+          "title_uk": "Ваш коментар",
+          "type": "textarea"
+        }
+      ],
+      "properties": {
+        "cancellationLegitimacy": {
+          "enum": [
+            "yes",
+            "no"
+          ],
+          "type": "string"
+        },
+        "cancellationLegitimacyComment": {
+          "maxLength": 10000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "cancellationLegitimacy"
+      ],
+      "type": "object"
+    },
+    "tender": {
+      "pattern": "^[0-9a-f]{32}$",
+      "reference": "tender",
+      "type": "string"
+    }
+  },
+  "required": [
+    "author",
+    "tender",
+    "formData"
+  ],
+  "type": "object"
+}
